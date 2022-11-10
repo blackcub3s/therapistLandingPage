@@ -8,10 +8,10 @@ This webpage was created to practice and showcase bootstrap, HTML, CSS, JavaScri
 - I used bootstrap frontend framework in order to create this landing page.
 - I made use of gliphicons and trigger their scale change via CSS hover selector.
 - I used the CSS transform property to achieve:
-    A) top background yellow and green sections to appear as if their structure wasn't a parallel container to the top and bottom of the screen. As you can see, each section has one horizontal bootstrap container, and then there are two custom made containers that have the same color as the bootstrap container but that are skewed -3 degrees in the Y axis on top, and two more at the bottom of the bootstrap container-. You can see a demonstration in the following GIF (besides seeing how hover CSS selector is used to chang opacity of two of the skewed containers or divs:
+    A) top background yellow and green sections to appear as if their structure wasn't a parallel container to the top and bottom of the screen. As you can see, each section has one horizontal bootstrap container, and then there are two custom made containers that have the same color as the bootstrap container but that are skewed -3 degrees in the Y axis on top, and two more at the bottom of the bootstrap container-. You can see a demonstration in the following GIF (it might need some time to load):
 
     ![transform demonstration](https://github.com/blackcub3s/therapistLandingPage/blob/main/mostraTransformSkewed.gif?raw=true)
-    -   
+    
 
 
 # IMPORTANT DISCLAIMER
