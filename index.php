@@ -248,7 +248,7 @@
 
                 <!-- PREU CONSULTA RAPIDA-->
                 <div class="card-body">
-                    <h1 class="card-title pricing-card-title baix_a_dalt_1" id = "consultaRapida"><?php echo $preu_rapid . " €"?></h1>
+                    <h1 class="card-title pricing-card-title baix_a_dalt_1" id = "consultaRapida">5 €</h1>
                     <ul class="list-unstyled mt-3 mb-4">
                        
                         <li id = "temps-rapid" class = "text-success duradeta">15 minuts de durada</li>
@@ -265,7 +265,7 @@
 
                 <!--PREU CONSULTA MITJANA -->
                 <div class="card-body">
-                    <h1 class="card-title pricing-card-title baix_a_dalt_2" id = "consultaMitjana"><?php echo $preu_mitja . " €"?></h1>
+                    <h1 class="card-title pricing-card-title baix_a_dalt_2" id = "consultaMitjana">10 €</h1>
                     <ul class="list-unstyled mt-3 mb-4">
                         <li id = "temps-mitja" class = "text-success duradeta">30 minuts de durada</li>
                         <li class="dalt">Et contactem en<br> menys de 10'</li>
@@ -283,7 +283,7 @@
 
                 <!--PREU CONSULTA NORMAL-->
                 <div class="card-body">
-                    <h1 class="card-title pricing-card-title baix_a_dalt_3" id = "consultaNormal"><?php echo $preu_normal . " €"?></h1>
+                    <h1 class="card-title pricing-card-title baix_a_dalt_3" id = "consultaNormal">20 €</h1>
 
                     <div class="form-check">
                     <ul class="list-unstyled mt-3 mb-4">
@@ -360,7 +360,40 @@
                 <div class="form-check">
                     <input class="form-check-input" required type="checkbox" value="" id="checkPoliticaDades">
                     <label class="form-check-label" for="flexCheckDefault">
-                        Accepto la política de privacitat de dades: <?php include "snippetProteccioDades.html"?>
+                        Accepto la política de privacitat de dades: 
+                        
+                    <!-- TOT AQUEST FRAGMENT HTML INCLOS DINS EL INDEX.PHP AMB INCLUDE VA EN TANDEM AMB la funcio de .js mostraModal()-->
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter" onclick="mostraModal()">Enllaç.</button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="elModalDeLesDades" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Política de privacitat de dades</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, tempora officiis quo eveniet, ipsa consectetur earum voluptatem commodi non asperiores enim error temporibus doloribus iste perspiciatis quisquam est dolorum ad.
+                                Sit dolorem eius quo repellat iste at? Necessitatibus esse quia ipsam ea vel similique ex rerum eius quisquam minima, sed voluptatem exercitationem nihil tenetur ab sit alias animi blanditiis molestiae.
+                                Nobis delectus non dolor, 
+                                <b>Totes les dades que ens entreguis seran venudes a facebook :)</b>
+                                aliquid qui dolorem illum accusamus deserunt necessitatibus sint suscipit dicta perspiciatis dolore aut aperiam, recusandae culpa velit, quasi voluptates sequi molestiae at consequatur pariatur incidunt! Voluptatibus?
+                                Voluptate quam repellendus harum omnis tenetur. Doloremque corrupti beatae accusantium quibusdam, quia similique reprehenderit cum voluptatum excepturi in quas possimus eos odio sequi quasi facere ut quo laborum necessitatibus voluptatem.
+                                Aperiam excepturi nostrum nisi, est voluptatum magni consequatur dolorem corporis aliquam non rem eum delectus odit sint hic accusantium veritatis minima dolore veniam expedita perspiciatis. Alias nam sit sapiente numquam?
+                                    !
+                                    </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tanca</button>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                    <!-- FI FRAGMENT HTML MENCIONAT -->
+                        
                     </label>
                 </div>
 
