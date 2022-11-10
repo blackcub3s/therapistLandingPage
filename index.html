@@ -20,86 +20,6 @@
     <!-- Custom styles for this template -->
     <link href="pricing.css" rel="stylesheet">
 
-
-
-    <?php
-    
-        /*TOTES LES DADES D'AQUEST SCRIPT HAURIEN DE VENIR D'UN SERVIDOR [INICI]*/
-
-        /*Aqui carreguem els preus de les sessions_PODRIES XUCLAR-LO PER UNA BASE DE DADES! I generar-les dinàmicament
-        en funció de la demanda per exemple. Aixo no es veu al navegador xP. Podem definir diferents tarifes
-        en funcio de la hora*/
-        $preu_rapid = 5;
-        $preu_mitja = 10;
-        $preu_normal = 20;
-
-        /*Si no hi ha psicolegs disponibles hem deshabilitat els pagaments. Aleshores oferim, de moment, 
-        la ossibilitat per contactar telefonicament i concertar visita telefonica. Aleshores o bé es fa sistema
-        per posar calendari (todo) i inhabilitar els pagaments en les hores concertades, o bé jo mateix passo el link
-        per al paypal a cada persona i li concerto la visita, desactivant els pagaments per atenció immediata manualment */
-
-      
-        $host = "161.22.40.26"; //localhost o nom de servidor servername
-        $username = "root";
-        $passwd = "2244Motos.";
-        $dbname = "web_psicoleg";
-
-         
-        //creo connexio i comprovo si ha anat be
-        //$conn = new mysqli($host, $username, $passwd);
-        /*
-        if ($conn->connect_error) {die("Connection failed: " . $conn->connect_error);}
-        echo "Connected successfully";
-
-        //$sql = "SELECT tecla_disponible FROM psicolegs;";
-        $sql = "CREATE DATABASE web_psicoleg;";
-        $resultat = $conn->query($sql);
-
-        */
-
-        /*
-        CODI PER A LA APP (permetra actualitzar l'estat ded disponible a NO disponible per a la persona amb deni 990)
-
-         UPDATE psicolegs SET tecla_disponible = 0 WHERE dni = "99999999Y"; 
-         UPDATE psicolegs SET tecla_disponible = 1 WHERE dni = "99999999Y"; 
-
-        */
-    
-        $psicolegs_disponibles = true;
-
-        //$conn->close();
-
-        
-        //rang hores de funcionament de la web (missatge especific de psicolegs dormen)
-        $hora_minima = 0;
-        $hora_maxima = 24;
-
-        /*final de les dades que haurien de xuclar del servidor*/
-        
-
-        //mail ("dilapidant@gmail.com" , "Prova PHP" , "El cos del missatget");
-
-        $hora = date('hour'); //STRING AMB di ai  hora
-        $trossos = explode(" ", $hora); //trocejo la hora
-
-        $dia_semana = substr($trossos[0],-4, strlen($trossos[0])); //Mon, Tue, Wed, ... m Sun, [SEMPRE TE UNA COMA AL FINAL SHIT]
-        $temps_hh = explode(":",$trossos[4])[0];
-        //$minut_hh = explode(":",$trossos[4])[1]; //no usat
-
-        //SI ES CAP DE SETMANA PUJEM EL PREU UN 30 PER CENT
-        if ($dia_semana == "Sat," or $dia_semana == "Sun," ) {
-            $preu_rapid = round($preu_rapid * 1.30);
-            $preu_mitja = round($preu_mitja * 1.30);
-            $preu_normal = round($preu_normal * 1.30);
-        }        
-        
-        //SI ESTEM FORA INTERVAL HORARI INHABILITEM LA WEB (WEB NOMES ACTIVA DE 9 A 23)
-        if ($temps_hh < $hora_minima or ($temps_hh > $hora_maxima - 1)) {
-            $psicolegs_disponibles = false;
-            $psicolegs_dormen = true;
-        }
-    ?>
-
   </head>
 
   <body>
@@ -177,7 +97,7 @@
                             </a>
                             <!-- Text -->
                             <h1>Atenció telemàtica</h1>
-                            <p class="posa_espai"> Et truquem per <b>telèfon o videotrucada</b> en qualsevol moment des de les <?php echo $hora_minima?> h a les <?php echo $hora_maxima?> h els 7 dies de la setmana. L'ajuda podem necessitar-la en qualsevol moment. </p>
+                            <p class="posa_espai"> Et truquem per <b>telèfon o videotrucada</b> en qualsevol moment des de les 0 h a les 24 h els 7 dies de la setmana. L'ajuda podem necessitar-la en qualsevol moment. </p>
                         </div>
                        
                         <div class = "col-md-4 text-center baix_a_dalt">
@@ -255,7 +175,7 @@
                         <li class="dalt">Et contactem en<br> menys de 10'</li>
                         <li id = "preu-hora-rapida" class = "mig"></li> <!-- es genera automaticament a partir de h1 id=consulta rapida i ultim element de li amb id preu-horar-rapida-->                    
                     </ul>
-                    <button onclick="bloca_element('consultaRapida');passa_pagos('Rapida'); passa_temps('rapid')" type="button" class="btn btn-lg btn-block btn-outline-primary" <?php if ($psicolegs_disponibles == false) { echo "disabled";}?>>Demana Cita</button>
+                    <button onclick="bloca_element('consultaRapida');passa_pagos('Rapida'); passa_temps('rapid')" type="button" class="btn btn-lg btn-block btn-outline-primary">Demana Cita</button>
                 </div>
                 </div>
                 <div class="card mb-4 box-shadow">
@@ -272,7 +192,7 @@
                         <li id = "preu-hora-mitjana" class = "mig"></li>
                     </ul>
                     
-                    <button onclick="bloca_element('consultaMitjana'); passa_pagos('Mitjana'); passa_temps('mitja')" type="button" class="btn btn-lg btn-block btn-outline-primary" <?php if ($psicolegs_disponibles == false) { echo "disabled";}?>>Demana cita</button>
+                    <button onclick="bloca_element('consultaMitjana'); passa_pagos('Mitjana'); passa_temps('mitja')" type="button" class="btn btn-lg btn-block btn-outline-primary">Demana cita</button>
                 </div>
                 </div>
                 <div class="card mb-4 box-shadow">
@@ -293,7 +213,7 @@
                     </ul>
                    
                 
-                    <button onclick="bloca_element('consultaNormal'); passa_pagos('Normal'); passa_temps('normal')" type="button" class="btn btn-lg btn-block btn-outline-primary" <?php if ($psicolegs_disponibles == false) { echo "disabled";}?>>Demana cita</button>
+                    <button onclick="bloca_element('consultaNormal'); passa_pagos('Normal'); passa_temps('normal')" type="button" class="btn btn-lg btn-block btn-outline-primary">Demana cita</button>
                 
                     
                     </div>
@@ -304,29 +224,7 @@
         </div>
 
         </form>
-        <?php
-                    if ($psicolegs_disponibles == false) {
-                        if (isset($psicolegs_dormen)) {
-                            if ($psicolegs_dormen) {
-                                echo '<div class="alert alert-danger" role="alert">'.
-                                        '<p class="lead text-center"'.'<br><b>NOTA: Ara mateix el servei està fora del rang horari i no permetem fer pagaments. Si vols, demana cita telefònica clicant a l'.'icona'.
-                                            ' <a href="https://api.whatsapp.com/send?phone=34638512516&text=Voldria concertar una visita."><i class="fa fa-whatsapp"></i></a>'
-                                        . ' o espera'."'t a que obrim de nou l'aplicatiu informàtic. Funcionem des de les <b>" . $hora_minima . " h</b> fins a les <b>". $hora_maxima . " h</b>.</p>'"
-                                    .'</div>';
-                                }
-                        }
-                        else {
-                            echo '<div class="alert alert-danger" role="alert">'.
-                                    '<p class="lead text-center"'.'<br><b>NOTA: Ara mateix no hi ha psicòlegs disponibles i no permetem fer pagaments. Si vols, demana cita telefònica clicant a l'.'icona'.
-                                        ' <a href="https://api.whatsapp.com/send?phone=34638512516&text=Voldria concertar una visita."><i class="fa fa-whatsapp"></i></a>'
-                                    . ' o espera'."'t a que obrim de nou l'aplicatiu informàtic.</b></p>"
-                                .'</div>';
-                        }
-                    }
 
-                    
-
-                ?>
         <!-- form contacte distancia -->
         <div id="formContactePago" style="display:none">
 
