@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .stripe {
+            --w: 100vw;
+            width: var(--w);
+            height: calc(var(--w) / 3);
+            background-image: linear-gradient(3deg, transparent 15%, #ffe083 15%, #ffe083 18%, #ffc106 18%, #ffc106 82%, #ffe083 82%, #ffe083 85%, transparent 85%);
+        }
+        
+        #hey {
+            text-align:center;
+            padding-top: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="stripe">
+        <div>
+            <p id = "hey">Hola</p>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

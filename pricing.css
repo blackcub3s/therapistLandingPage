@@ -1,0 +1,306 @@
+
+
+html {
+  overflow-x: hidden; /*Evita la scrollable bar (EN TANDEM AMB LINIA 10)*/
+  font-size: 14px;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden; /*Evita la scrollable bar*/
+}
+
+/*by internet*/
+*,*:before,*:after {
+  box-sizing:border-box;
+ 
+}
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.container {
+  max-width: 960px;
+}
+
+:root{
+  /*--fons-warning: red;*/
+  --fons-warning:rgb(255, 193, 7);
+  --fons-meu-verd: rgb(40, 172, 99); /*hex --> #5CDB95); https://visme.co/blog/website-color-schemes/*/
+}
+.pricing-header {
+  max-width: 700px;
+}
+
+.card-deck .card {
+  min-width: 220px;
+}
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+
+
+.bg-color-custom {
+  background-color: blueviolet;
+}
+
+.presentacio{
+  padding-top:170px;
+  padding-bottom:0px;
+}
+
+
+.padding_psicoleg {
+  margin-bottom: 10px;
+}
+
+li {
+  list-style-type:none;
+}
+
+svg {
+  width: 100px;
+  height: auto;
+  margin-top: 40px;
+  margin-bottom:20px;
+  transition: all 0.1s ease-in;
+}
+
+svg:hover{
+  transform: scale(1.1);
+}
+
+.venga {
+  text-align: center;
+}
+
+p, li {
+  font-size:20px;
+}
+
+
+
+
+.posa_espai {
+  margin-top: 30px;
+  margin-bottom: 35px;
+  position:relative;
+  z-index:1;
+}
+
+
+
+.ASD {
+  padding-top: 150px;
+  padding-bottom: 400px;
+}
+
+#formContactePago {
+  padding-bottom:30px;
+  margin: 80px 0px;
+  padding-left:5px;
+}
+
+/*animem la sortida del formulari*/
+#formContactePago {transition: all 0.1s ease-in;}
+#formContactePago button:active {transform:scaleZ(1.8);}
+
+img {
+  transition: all 0.2s ease-in;
+}
+
+img:hover {
+  transform: scale(1.01);
+}
+
+/*Estils per al radiobutton*/
+#paypal, #tarja {
+  padding-bottom: 20px;
+}
+
+#caca {padding-top:50px;}
+
+.duradeta {
+  padding-top:0px;
+}
+
+.dalt {
+  padding-top: 35px;
+  padding-bottom:27px;
+}
+
+.mig {padding-bottom: 27px}
+
+#serveis{
+  padding-top: 80px;
+}
+
+/*ESTILEM LA PART DE SERVEIS. DIV PRINCIPAL*/
+.seccio_serveis {
+  margin-top:-50px;
+  padding-top: -110px;
+  padding-bottom: 100px;
+  position: relative;
+  z-index: 100;
+}
+
+/*ARA VENEN ELS DIVS QUE ESTAN TORTS PER A LA SECCIO SERVEIAS*/
+#container_tort_up{
+  background-color: var(--fons-warning);
+  padding-top:230px;
+  transform: skewY(3deg);
+  position: relative;
+  top:150px;
+  z-index: 2;
+}
+
+#container_tort_up_difuminat{ /*Posem la opacitat mes baixa per fer la segona linia torta*/
+  background-color: var(--fons-warning);
+  opacity:50%;
+  padding-top:50px;
+  transform: skewY(3deg);
+  position: relative;
+  top:150px;
+  z-index: 2;
+}
+
+#container_tort_down {
+  background-color: var(--fons-warning);
+  padding-top:230px;
+  transform: skewY(3deg);
+  position: relative;
+  bottom:170px;
+  z-index: 0;
+}
+
+#container_tort_down_difuminat {/*Posem la opacitat mes baixa per fer la segona linia torta*/
+  background-color: var(--fons-warning);
+  opacity:50%;
+  padding-top:50px;
+  transform: skewY(3deg);
+  position: relative;
+  bottom:170px;
+  z-index: 0;
+}
+
+
+
+
+/*APARTAT ATENCIO PRESENCIAL*/
+
+#afegeix_padding_per_dalt_i_baix {
+  padding: 100px 0px;
+  z-index:300;
+}
+
+#container_tort_up_2 {
+  
+  padding-top:300px;
+  transform:skewY(-3deg);
+  position:relative;
+  top:200px;
+  z-index:30;
+}
+
+#container_tort_up_2_difuminat{
+  
+  opacity:50%;
+  padding-top:50px;
+  transform:skewY(-3deg);
+  position:relative;
+  top:200px;
+ 
+}
+
+#container_tort_down_2 {
+  
+  padding-top:300px;
+  transform:skewY(-3deg);
+  position:relative;
+  bottom:200px;
+  z-index:3;
+}
+
+#container_tort_down_2_difuminat{
+ 
+  opacity:50%;
+  padding-top:50px;
+  transform:skewY(-3deg);
+  position:relative;
+  bottom:200px;
+  z-index:3;
+}
+
+.bg-verdet {
+  background-color: var(--fons-meu-verd);
+}
+
+
+/*FEM QUE ELS CONTENIDORS DIFUMINATS I TORTS TINGUIN HOVER. QUEDA GUAY*/
+#container_tort_up_2_difuminat:hover, 
+#container_tort_down_2_difuminat:hover,
+#container_tort_up_difuminat:hover, 
+#container_tort_down_difuminat:hover{opacity: 20%;}
+
+#container_tort_down_2_difuminat, 
+#container_tort_up_2_difuminat,
+#container_tort_up_difuminat, 
+#container_tort_down_difuminat 
+ {transition: all 0.2s ease-in;}
+
+
+
+/*PUTA SALVACIÓ PER CORREGIR LA SCROLLBAR HORITZONTAL*/
+.row{
+  margin: 0px;
+  }
+
+/*ID DE LA SECCIO PREUS*/
+#preus {
+  padding-bottom:0px;
+}
+
+
+/*BOTO WHATSAPP: https://codepen.io/demoonkevin/pen/MvPEpV*/
+  .float{
+    position:fixed;
+    width:200px;
+    height:200px;
+    bottom:60px;
+    right:60px;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index:100;
+  }
+
+  .my-float{
+    margin-top:16px;
+  }
+
+
+
+
+/*FI BOTO WHATSAPP*/
+
+
+
+
+a { color: blueviolet; } 
+
